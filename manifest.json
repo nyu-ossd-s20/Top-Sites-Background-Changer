@@ -4,20 +4,34 @@
   "version": "1.0",
 
   "description": "Choose the background for your most requently visited sites.",
-  "homepage_url": "https://github.com/nyu-ossd-s20/Group2"
+  "homepage_url": "https://github.com/nyu-ossd-s20/Group2",
 
   "icons": {
     "48": "icons/~.png"
   },
 
   "permissions": [
-    "activeTab"
+    "activeTab",
     "topSites"
   ],
 
   "browser_action": {
     "default_icon": "icons/~.png",
     "default_title": "TopBG",
-    "default_popup": "popup/~.html"
+    "default_popup": "popup/placehold.html"
   },
+
+  "background": {
+    "scripts": [
+        "background.js"
+    ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_scripts/main_script.js"]
+    }
+  ]
+
 }
