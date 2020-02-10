@@ -7,7 +7,7 @@
   "homepage_url": "https://github.com/nyu-ossd-s20/Group2",
 
   "icons": {
-    "48": "icons/~.png"
+    "48": "icons/border-48.png"
   },
 
   "permissions": [
@@ -16,7 +16,7 @@
   ],
 
   "browser_action": {
-    "default_icon": "icons/~.png",
+    "default_icon": "icons/border-48.png",
     "default_title": "TopBG",
     "default_popup": "popup/placehold.html"
   },
