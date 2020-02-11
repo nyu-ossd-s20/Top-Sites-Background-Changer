@@ -1,0 +1,40 @@
+html, body {
+  width: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  margin: 3% auto;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.red:hover{
+  background-color: #FFCCCB;
+}
+.red{
+  background-color: #E25F43;
+}
+.blue:hover{
+  background-color: #CFF2F2;
+}
+.blue{
+  background-color: #23ABF0;
+}
+.green:hover{
+  background-color: #BAF875;
+}
+.green{
+  background-color: #82DD1A; 
+}
+.reset {
+  background-color: #FBFBC9;
+}
+.reset:hover {
+  background-color: #EAEA9D;
+}
