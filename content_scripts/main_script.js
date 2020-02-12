@@ -1,7 +1,9 @@
+//Clicked color
 let color = ""
 function handleResponse(message) {
     let urls = []
     console.log(message.current)
+    //get current site
     for (site of message.response) {
         const u = site.url
         if (u.includes('www')) {
@@ -27,7 +29,7 @@ function handleResponse(message) {
         currentURL = currentURL.slice(idx+3)
     }
     console.log(currentURL)
-
+    //Check to see if you are on a top site 
     if (urls.includes(currentURL)) {
         // change to processing the user chosen colour
         console.log(color)
@@ -43,6 +45,7 @@ function handleResponse(message) {
                 
             })
         }
+        //coded for each color because the CSS needs to not be given a variable 
         else if (color == 'blue') {
             browser.tabs.insertCSS({
                 code: `body {
@@ -68,6 +71,7 @@ function handleResponse(message) {
             })
 
         }
+        //Do it again
         else{
             browser.tabs.insertCSS({
                 code: `body {
@@ -80,7 +84,7 @@ function handleResponse(message) {
 
         }
 
-        
+        //Debug
         console.log("Site in top sites")
     }
     else {
@@ -91,11 +95,11 @@ function handleResponse(message) {
     }
 
 }
-  
+//General error handling
 function handleError(error) {
     console.log(`Error: ${error}`);
 }
-  
+//Get top sites 
 function sendMessage(e) {
     console.log(e)
     color = e
