@@ -30,8 +30,57 @@ function handleResponse(message) {
 
     if (urls.includes(currentURL)) {
         // change to processing the user chosen colour
-        // console.log(color)
-        document.body.style.backgroundColor = color
+        console.log(color)
+        // document.body.style.backgroundColor = color
+        if (color == 'red') {
+            browser.tabs.insertCSS({
+                code: `body {
+                    border-style: solid;
+                    border-width: 30px;
+                    border-color: red;
+                  }`
+                    
+                
+            })
+        }
+        else if (color == 'blue') {
+            browser.tabs.insertCSS({
+                code: `body {
+                    border-style: solid;
+                    border-width: 30px;
+                    border-color: blue;
+                  }`
+                    
+                
+            })
+
+        }
+
+        else if (color == 'green') {
+            browser.tabs.insertCSS({
+                code: `body {
+                    border-style: solid;
+                    border-width: 30px;
+                    border-color: green;
+                  }`
+                    
+                
+            })
+
+        }
+        else{
+            browser.tabs.insertCSS({
+                code: `body {
+                    border-style: solid;
+                    border-width: 0px;
+                  }`
+                    
+                
+            })
+
+        }
+
+        
         console.log("Site in top sites")
     }
     else {
