@@ -12,7 +12,8 @@
 
   "permissions": [
     "activeTab",
-    "topSites"
+    "topSites", 
+    "tabs"
   ],
 
   "browser_action": {

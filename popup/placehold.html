@@ -3,19 +3,21 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self'">
     <link rel="stylesheet" href="placehold.css"/>
   </head>
 
 <body>
   <div id="popup-content">
-    <div class="button red">Red</div>
-    <div class="button blue">Blue</div>
-    <div class="button green">Green</div>
-    <div class="button reset">Reset</div>
+    <div id='red' onclick="sendMessage(this.id)">Red</div>
+    <div id='blue' onclick="sendMessage(this.id)">Blue</div>
+    <div id='green' onclick="sendMessage(this.id)">Green</div>
+    <div id='reset' onclick="sendMessage(this.id)">Reset</div>
   </div>
   <div id="error-content" class="hidden">
     <p>Can't color this web page.</p><p>Try a different page.</p>
   </div>
+  <script src="../content_scripts/main_script.js"> </script>
 </body>
 
 </html>

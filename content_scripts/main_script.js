@@ -1,5 +1,7 @@
+let color = ""
 function handleResponse(message) {
     let urls = []
+    console.log(message.current)
     for (site of message.response) {
         const u = site.url
         if (u.includes('www')) {
@@ -14,7 +16,7 @@ function handleResponse(message) {
         }
     }
     console.log(urls)
-    let currentURL = window.location.href
+    let currentURL = message.current
     if (currentURL.includes('www')) {
         const idx = currentURL.indexOf('www')
         currentURL = currentURL.slice(idx+4)
@@ -28,6 +30,8 @@ function handleResponse(message) {
 
     if (urls.includes(currentURL)) {
         // change to processing the user chosen colour
+        // console.log(color)
+        document.body.style.backgroundColor = color
         console.log("Site in top sites")
     }
     else {
@@ -44,8 +48,12 @@ function handleError(error) {
 }
   
 function sendMessage(e) {
+    console.log(e)
+    color = e
     const sending = browser.runtime.sendMessage({content: "request for topSites"});
     sending.then(handleResponse, handleError);  
 }
   
-window.addEventListener('click', sendMessage);
+// window.addEventListener('click', sendMessage);
+// sendMessage()
+// document.getElementById('red').addEventListener('click', sendMessage);

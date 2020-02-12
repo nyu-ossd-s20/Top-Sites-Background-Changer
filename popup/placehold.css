@@ -14,27 +14,27 @@ html, body {
   cursor: pointer;
 }
 
-.red:hover{
+#red:hover{
   background-color: #FFCCCB;
 }
-.red{
+#red{
   background-color: #E25F43;
 }
-.blue:hover{
+#blue:hover{
   background-color: #CFF2F2;
 }
-.blue{
+#blue{
   background-color: #23ABF0;
 }
-.green:hover{
+#green:hover{
   background-color: #BAF875;
 }
-.green{
+#green{
   background-color: #82DD1A; 
 }
-.reset {
+#reset {
   background-color: #FBFBC9;
 }
-.reset:hover {
+#reset:hover {
   background-color: #EAEA9D;
 }
